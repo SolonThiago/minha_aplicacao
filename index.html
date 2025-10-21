@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TecBlog - O seu Blog de tecnologia</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/estilo.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <i class="fas fa-microchip"></i>
+          <span>Tec<strong>Blog</strong></span>
+        </div>
+
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Jogos</a></li>
+            <li><a href="#">Celulares</a></li>
+            <li><a href="#">Informática</a></li>
+            <li><a href="#">Eletrônicos</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-controls">
+          <button
+            class="dark-mode-btn"
+            onclick="toggleDarkMode()"
+            title="Alternar tema"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="posts">
+        <article class="post-card">
+          <img src="imagens/imagem1.jpg" alt="Tecnologia" class="post-image" />
+          <div class="post-content">
+            <div class="post-date">
+              <i class="far fa-calendar"></i>
+              <span>17 Outubro 2025</span>
+            </div>
+            <h2 class="post-title">Título da postagem 1</h2>
+            <p class="post-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pulvinar ex a viverra maximus. Nulla eu sem pellentesque,
+              fringilla felis ac, ultrices purus. Sed cursus eu dolor eu
+              suscipit.
+            </p>
+            <a href="#" class="read-more">
+              Leia mais
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="imagens/imagem2.jpg" alt="Tecnologia" class="post-image" />
+          <div class="post-content">
+            <div class="post-date">
+              <i class="far fa-calendar"></i>
+              <span>17 Outubro 2025</span>
+            </div>
+            <h2 class="post-title">Título da postagem 2</h2>
+            <p class="post-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pulvinar ex a viverra maximus. Nulla eu sem pellentesque,
+              fringilla felis ac, ultrices purus. Sed cursus eu dolor eu
+              suscipit.
+            </p>
+            <a href="#" class="read-more">
+              Leia mais
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="imagens/imagem3.jpg" alt="Tecnologia" class="post-image" />
+          <div class="post-content">
+            <div class="post-date">
+              <i class="far fa-calendar"></i>
+              <span>17 Outubro 2025</span>
+            </div>
+            <h2 class="post-title">Título da postagem 3</h2>
+            <p class="post-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pulvinar ex a viverra maximus. Nulla eu sem pellentesque,
+              fringilla felis ac, ultrices purus. Sed cursus eu dolor eu
+              suscipit.
+            </p>
+            <a href="#" class="read-more">
+              Leia mais
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">
+            <i class="fas fa-clock"></i>
+            Postagens Recentes
+          </h3>
+          <div class="recent-post">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+          <div class="recent-post">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#">Leia mais →</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">
+            <i class="fas fa-folder"></i>
+            Categorias
+          </h3>
+          <div class="category-list">
+            <a href="#" class="category-item">
+              <span>🎮 Jogos</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#" class="category-item">
+              <span>📱 Celulares</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#" class="category-item">
+              <span>💻 Informática</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+            <a href="#" class="category-item">
+              <span>⚡ Eletrônicos</span>
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>
+        © 2025 Desenvolvido por
+        <a href="https://github.com/SolonThiago" target="_blank">SolonDev</a> |
+        Todos os direitos reservados
+      </p>
+    </footer>
+
+    <script>
+      function toggleDarkMode() {
+        const body = document.body;
+        const icon = document.getElementById("themeIcon");
+
+        if (body.dataset.theme === "dark") {
+          body.dataset.theme = "";
+          icon.className = "fas fa-moon";
+        } else {
+          body.dataset.theme = "dark";
+          icon.className = "fas fa-sun";
+        }
+      }
+
+      function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        const hamburger = document.getElementById("hamburger");
+
+        menu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      // Fechar menu ao clicar em um link
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("navMenu").classList.remove("active");
+          document.getElementById("hamburger").classList.remove("active");
+        });
+      });
+
+      // Fechar menu ao clicar fora
+      document.addEventListener("click", (e) => {
+        const menu = document.getElementById("navMenu");
+        const hamburger = document.getElementById("hamburger");
+
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+          menu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
